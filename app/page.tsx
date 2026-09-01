@@ -145,9 +145,9 @@ export default function Home() {
             {[
               { client: "Bream", role: "Full-Stack Engineer", stack: ["Next.js", "Capacitor", "C#", "SQL"], description: "I'm a contractor on the engineering team at Bream, a private community platform where women 50+ find friendship through pods, affinity groups, and shared experiences. Since June 2026 I've been building an incentive referral feature across the Next.js/Capacitor client and C# API.", link: "https://www.hellobream.com/" },
               { client: "hili", role: "Sole Engineer", stack: ["Next.js", "TypeScript", "Supabase"], description: "I've been the sole engineer at hili since September 2025, responsible for the full stack — architecture decisions, feature development, infrastructure, and deployment of an active consumer web application.", link: "https://app.gethili.com" },
-              { client: "Daybreak Haunts", role: "Utah Food Bank Fundraiser", stack: ["React", "Tailwind CSS", "GCP", "JustGiving API"], description: "A donation-driven pass system for a community Halloween event. Donors who gave to the Utah Food Bank received a digital pass granting perks at local businesses and Halloween houses. The campaign raised over $4,000.", link: null },
+              { client: "Daybreak Haunts", role: "Utah Food Bank Fundraiser", stack: ["React", "Tailwind CSS", "GCP", "JustGiving API"], description: "A donation-driven pass system for a community Halloween event. Donors who gave to the Utah Food Bank received a digital pass granting perks at local businesses and Halloween houses. The campaign raised over $4,000.", link: null, note: "Live for the Halloween fundraiser only — no longer viewable" },
               { client: "Magpie Zines", role: "Grand Coven Library", stack: ["Python", "Django", "PostgreSQL"], description: "A community-contributed catalog app for a tabletop roleplaying game. Players submit fictional magical texts using a password-gated form, browse and filter the catalog by category and type, and print catalog cards.", link: "https://library.skoticus.com" },
-              { client: "Gold Family Farms", role: "gFix Web Application", stack: ["Python", "Django", "AWS S3", "Heroku"], description: "A web app built to replace a paper-based equipment management system for a large plant nursery. Features include inventory tracking, maintenance tickets, preventative maintenance triggers, and role-based user permissions.", link: null },
+              { client: "Gold Family Farms", role: "gFix Web Application", stack: ["Python", "Django", "AWS S3", "Heroku"], description: "A web app built to replace a paper-based equipment management system for a large plant nursery. Features include inventory tracking, maintenance tickets, preventative maintenance triggers, and role-based user permissions.", link: null, note: "Internal application — owned by Gold Family Farms and not publicly viewable" },
             ].map((project, i) => (
               <div key={i} style={{ padding: "32px 0", borderTop: "1px solid rgba(240, 232, 236, 0.1)", display: "grid", gridTemplateColumns: "1fr 2fr", gap: "48px", alignItems: "start" }} className="work-row">
                 <div>
@@ -160,13 +160,16 @@ export default function Home() {
                   </div>
                 </div>
                 <div>
-                  <p style={{ fontSize: "16px", lineHeight: 1.75, color: "var(--dusk)", marginBottom: project.link ? "16px" : "0" }}>{project.description}</p>
+                  <p style={{ fontSize: "16px", lineHeight: 1.75, color: "var(--dusk)", marginBottom: project.link || project.note ? "16px" : "0" }}>{project.description}</p>
                   {project.link && (
                     <a href={project.link} target="_blank" rel="noopener noreferrer"
                       style={{ fontSize: "14px", color: "var(--rose)", fontWeight: 500, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "6px" }}>
                       View project
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10" /></svg>
                     </a>
+                  )}
+                  {!project.link && project.note && (
+                    <p style={{ fontSize: "14px", color: "var(--dusk)", fontWeight: 500, fontStyle: "italic" }}>{project.note}</p>
                   )}
                 </div>
               </div>
