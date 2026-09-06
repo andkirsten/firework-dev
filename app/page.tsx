@@ -51,14 +51,14 @@ export default function Home() {
       <main id="main">
 
         {/* Hero */}
-        <section className="hero" style={{ maxWidth: "1100px", margin: "0 auto", padding: "96px 24px 80px", display: "grid", gridTemplateColumns: "1fr min(340px, 32%)", gap: "64px", alignItems: "center" }}>
+        <section className="hero" style={{ maxWidth: "1100px", margin: "0 auto", padding: "96px 24px 80px" }}>
           <div className="hero-content">
             <p style={{ fontSize: "14px", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--rose)", marginBottom: "20px", fontWeight: 500 }}>Firework Development</p>
             <h1 style={{ fontFamily: "var(--font-dm-serif)", fontSize: "clamp(42px, 6vw, 72px)", lineHeight: 1.1, letterSpacing: "-0.02em", marginBottom: "28px", maxWidth: "800px", color: "var(--petal)" }}>
               Building software that works —{" "}<span style={{ color: "var(--rose)" }}>and feels human.</span>
             </h1>
             <p style={{ fontSize: "20px", lineHeight: 1.6, color: "var(--dusk)", maxWidth: "560px", marginBottom: "40px" }}>
-              I help businesses build software that solves real problems, and founders bring their product ideas to life.
+              I design and build software that solves real problems — partnering with startups and businesses from user flows through polished interfaces.
             </p>
             <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
               <a href="#contact" style={{ display: "inline-block", backgroundColor: "var(--rose)", color: "#fff", padding: "14px 28px", borderRadius: "6px", textDecoration: "none", fontSize: "15px", fontWeight: 500 }}
@@ -70,17 +70,6 @@ export default function Home() {
                 See my work
               </a>
             </div>
-          </div>
-          <div className="hero-portrait">
-            <Image
-              src="/hero-portrait.png"
-              alt="Watercolor portrait of Kirsten Andersen Morris"
-              width={1024}
-              height={1024}
-              priority
-              unoptimized
-              style={{ width: "100%", height: "auto", display: "block" }}
-            />
           </div>
         </section>
 
@@ -98,18 +87,27 @@ export default function Home() {
           </div>
           <div style={{ paddingTop: "8px" }}>
             <p style={{ fontSize: "17px", lineHeight: 1.75, marginBottom: "20px", color: "var(--dusk)" }}>
-              I&apos;m a full-stack engineer with a particular strength on the back end. I work through Firework Development, my independent software practice, where I partner with startups and businesses to build web apps and SaaS products that actually solve problems.
+              I design and build digital products — from user flows and wireframing in Miro through front-end implementation in code. Through Firework Development, my independent software practice, I partner with startups and businesses on web and mobile apps that actually solve problems.
             </p>
             <p style={{ fontSize: "17px", lineHeight: 1.75, marginBottom: "20px", color: "var(--dusk)" }}>
-              I hold a master&apos;s degree in technical communication, which means I think as much about clarity and usability as I do about clean code. I care deeply about accessibility — building software that works for everyone isn&apos;t a checkbox for me, it&apos;s a standard. I&apos;m a Certified Professional in Accessibility Core Competencies (CPACC) through IAAP.
+              On most projects I own the full experience; I&apos;ve also collaborated with dedicated designers and worked within established design systems. I hold a master&apos;s degree in technical communication and IAAP CPACC certification — clarity, usability, and accessibility are standards I build into every interface.
             </p>
             <p style={{ fontSize: "17px", lineHeight: 1.75, color: "var(--dusk)" }}>
               I&apos;m scrappy, optimistic, and easy to work with. I ask good questions, take feedback well, and I&apos;m always learning. If you&apos;ve worked with developers who were hard to reach or hard to understand, I&apos;m told I&apos;m a different experience.
             </p>
-            <div style={{ marginTop: "32px", display: "flex", flexWrap: "wrap", gap: "8px" }}>
-              {["Next.js", "TypeScript", "Python", "Django", "Supabase", "React", "PostgreSQL", "Node.js", "AWS S3", "Figma"].map((tech) => (
-                <span key={tech} style={{ fontSize: "13px", padding: "4px 12px", backgroundColor: "var(--deep)", borderRadius: "100px", color: "var(--dusk)", fontWeight: 500 }}>{tech}</span>
-              ))}
+            <div style={{ marginTop: "32px" }}>
+              <p style={{ fontSize: "12px", letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--rose)", fontWeight: 500, marginBottom: "10px" }}>Design</p>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "20px" }}>
+                {["Miro", "Figma", "User flows", "Wireframing", "Accessibility", "Responsive UI"].map((tag) => (
+                  <span key={tag} style={{ fontSize: "13px", padding: "4px 12px", backgroundColor: "var(--deep)", borderRadius: "100px", color: "var(--dusk)", fontWeight: 500 }}>{tag}</span>
+                ))}
+              </div>
+              <p style={{ fontSize: "12px", letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--rose)", fontWeight: 500, marginBottom: "10px" }}>Development</p>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
+                {["Next.js", "TypeScript", "React", "Python", "Django", "Supabase", "PostgreSQL", "Node.js", "AWS S3"].map((tag) => (
+                  <span key={tag} style={{ fontSize: "13px", padding: "4px 12px", backgroundColor: "var(--deep)", borderRadius: "100px", color: "var(--dusk)", fontWeight: 500 }}>{tag}</span>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -123,9 +121,9 @@ export default function Home() {
             </h2>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "32px" }} className="three-col">
               {[
-                { number: "01", title: "Web App & SaaS Development", body: "Full-stack development with a back-end focus — from greenfield builds to new features on existing products. I work in Next.js, Supabase, TypeScript, Python, and Django." },
-                { number: "02", title: "Startup Product Partnership", body: "Early-stage founder with an idea and no technical co-founder? I can be your first engineering partner — helping you scope, build, and ship your MVP without the overhead of an agency." },
-                { number: "03", title: "Technical Problem Solving", body: "Not sure what you need yet? I'm happy to start with a conversation. I help teams think through problems, evaluate options, and make a plan before writing a single line of code." },
+                { number: "01", title: "Product & UI Design", body: "User flows, wireframes, and interface design — from early discovery in Miro through polished, accessible UI. I refine designs in code, which lets me iterate quickly on real interactions and responsive behavior." },
+                { number: "02", title: "Web & Mobile Development", body: "Full-stack development for web and mobile apps — from greenfield builds to new features on existing products. I work in Next.js, Capacitor, Supabase, TypeScript, Python, and Django." },
+                { number: "03", title: "Startup Product Partnership", body: "Early-stage founder with an idea and no technical co-founder? I can be your first product partner — helping you scope, design, build, and ship your MVP without the overhead of an agency." },
               ].map((service) => (
                 <div key={service.number} style={{ backgroundColor: "var(--midnight)", borderRadius: "12px", padding: "32px" }}>
                   <p style={{ fontSize: "13px", color: "var(--rose)", fontWeight: 500, marginBottom: "16px" }}>{service.number}</p>
@@ -143,11 +141,32 @@ export default function Home() {
           <h2 style={{ fontFamily: "var(--font-dm-serif)", fontSize: "clamp(32px, 4vw, 48px)", lineHeight: 1.15, letterSpacing: "-0.02em", marginBottom: "56px", color: "var(--petal)" }}>Selected projects</h2>
           <div style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
             {[
-              { client: "Bream", role: "Full-Stack Engineer", stack: ["Next.js", "Capacitor", "C#", "SQL"], description: "I'm a contractor on the engineering team at Bream, a private community platform where women 50+ find friendship through pods, affinity groups, and shared experiences. Since June 2026 I've been building an incentive referral feature across the Next.js/Capacitor client and C# API.", link: "https://www.hellobream.com/" },
-              { client: "hili", role: "Sole Engineer", stack: ["Next.js", "TypeScript", "Supabase"], description: "I've been the sole engineer at hili since September 2025, responsible for the full stack — architecture decisions, feature development, infrastructure, and deployment of an active consumer web application.", link: "https://app.gethili.com" },
-              { client: "Daybreak Haunts", role: "Utah Food Bank Fundraiser", stack: ["React", "Tailwind CSS", "GCP", "JustGiving API"], description: "A donation-driven pass system for a community Halloween event. Donors who gave to the Utah Food Bank received a digital pass granting perks at local businesses and Halloween houses. The campaign raised over $4,000.", link: null, note: "Live for the Halloween fundraiser only — no longer viewable" },
-              { client: "Magpie Zines", role: "Grand Coven Library", stack: ["Python", "Django", "PostgreSQL"], description: "A community-contributed catalog app for a tabletop roleplaying game. Players submit fictional magical texts using a password-gated form, browse and filter the catalog by category and type, and print catalog cards.", link: "https://library.skoticus.com" },
-              { client: "Gold Family Farms", role: "gFix Web Application", stack: ["Python", "Django", "AWS S3", "Heroku"], description: "A web app built to replace a paper-based equipment management system for a large plant nursery. Features include inventory tracking, maintenance tickets, preventative maintenance triggers, and role-based user permissions.", link: null, note: "Internal application — owned by Gold Family Farms and not publicly viewable" },
+              { client: "Bream", role: "UI/UX Design & Full-Stack Engineering", stack: ["Next.js", "Capacitor", "C#", "SQL", "Figma"], description: "Contractor on the engineering team at Bream, a private community platform where women 50+ find friendship through pods, affinity groups, and shared experiences. I've helped design and build across the Next.js/Capacitor client and C# API — including a more engaging member dashboard landing page (in collaboration with our PM), an incentive referral feature, a tagging system, and an updated profile page.", link: "https://www.hellobream.com/", imageGroups: [
+                { label: "Before", images: [
+                  { src: "/work/bream/dashboard-before.png", alt: "Bream member dashboard before redesign — sidebar navigation with feature cards", width: 670, height: 960 },
+                ] },
+                { label: "After", images: [
+                  { src: "/work/bream/after-dashboard.png", alt: "Bream dashboard after redesign — referral invite, upcoming plans, and event tags", width: 324, height: 662 },
+                  { src: "/work/bream/after-groups.png", alt: "Bream dashboard showing your groups and latest community activity", width: 322, height: 661 },
+                  { src: "/work/bream/after-discovery.png", alt: "Bream dashboard showing group discovery, tagged perks, and member benefits", width: 323, height: 661 },
+                ] },
+              ] },
+              { client: "hili", role: "Full-Stack Engineer", stack: ["Next.js", "TypeScript", "Supabase"], description: "Full-stack engineer at hili since September 2025 — architecture, feature development, infrastructure, and deployment. I implement UI in collaboration with a dedicated designer on an active consumer web application.", link: "https://app.gethili.com" },
+              { client: "Daybreak Haunts", role: "UI/UX Design & Development", stack: ["Miro", "React", "Tailwind CSS", "GCP", "JustGiving API"], description: "Designed and built a donation-driven pass system for a community Halloween fundraiser. I owned the full UI/UX — from the donation landing page and digital pass experience to the interactive neighborhood map and business rewards flow. The campaign raised over $4,000 for the Utah Food Bank.", link: null, note: "Live for the Halloween fundraiser only — no longer viewable", images: [
+                { src: "/work/daybreak-haunts/landing.png", alt: "Daybreak Haunts donation landing page with Utah Food Bank integration" },
+                { src: "/work/daybreak-haunts/pass.png", alt: "Digital Haunts Pass showing business rewards and perks" },
+                { src: "/work/daybreak-haunts/map.png", alt: "Interactive neighborhood map with legend and business locations" },
+              ] },
+              { client: "Magpie Zines", role: "UI/UX Design & Development", stack: ["Miro", "Python", "Django", "PostgreSQL"], description: "Designed and built a community-contributed catalog app for a tabletop roleplaying game. I designed the browse, filter, and submission workflows, then built the full stack — password-gated contributor forms, catalog filtering by category and type, and print-ready catalog cards.", link: "https://library.skoticus.com" },
+              { client: "Gold Family Farms", role: "UI/UX Design & Development", stack: ["Miro", "Figma", "Python", "Django", "AWS S3", "Heroku"], description: "Designed and built gFix, a web app that replaced a paper-based equipment management system for a large plant nursery. I worked directly with the client to map field and workshop workflows, then designed the full UI — from ticket submission and mechanic assignment through inventory detail views and preventative maintenance scheduling.", link: null, note: "Internal application — owned by Gold Family Farms and not publicly viewable", imageGroups: [
+                { images: [
+                  { src: "/work/gfix/ticket-submit.png", alt: "gFix create ticket form for reporting equipment issues", caption: "Submit ticket", width: 498, height: 600 },
+                  { src: "/work/gfix/ticket-list.png", alt: "gFix open tickets dashboard with assignment and filtering", caption: "Open tickets", width: 497, height: 939 },
+                  { src: "/work/gfix/ticket-detail.png", alt: "gFix ticket detail view with repair assignment and photo upload", caption: "Ticket detail", width: 498, height: 931 },
+                  { src: "/work/gfix/item-detail.png", alt: "gFix equipment inventory detail with gallery and history tabs", caption: "Item detail", width: 479, height: 520 },
+                  { src: "/work/gfix/pm-list.png", alt: "gFix preventative maintenance schedule with time and usage triggers", caption: "PM schedule", width: 499, height: 716 },
+                ] },
+              ] },
             ].map((project, i) => (
               <div key={i} style={{ padding: "32px 0", borderTop: "1px solid rgba(240, 232, 236, 0.1)", display: "grid", gridTemplateColumns: "1fr 2fr", gap: "48px", alignItems: "start" }} className="work-row">
                 <div>
@@ -160,16 +179,64 @@ export default function Home() {
                   </div>
                 </div>
                 <div>
-                  <p style={{ fontSize: "16px", lineHeight: 1.75, color: "var(--dusk)", marginBottom: project.link || project.note ? "16px" : "0" }}>{project.description}</p>
+                  <p style={{ fontSize: "16px", lineHeight: 1.75, color: "var(--dusk)", marginBottom: project.link || project.note || project.images || project.imageGroups ? "16px" : "0" }}>{project.description}</p>
                   {project.link && (
                     <a href={project.link} target="_blank" rel="noopener noreferrer"
-                      style={{ fontSize: "14px", color: "var(--rose)", fontWeight: 500, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "6px" }}>
+                      style={{ fontSize: "14px", color: "var(--rose)", fontWeight: 500, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "6px", marginBottom: project.images || project.imageGroups ? "24px" : "0" }}>
                       View project
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10" /></svg>
                     </a>
                   )}
                   {!project.link && project.note && (
-                    <p style={{ fontSize: "14px", color: "var(--dusk)", fontWeight: 500, fontStyle: "italic" }}>{project.note}</p>
+                    <p style={{ fontSize: "14px", color: "var(--dusk)", fontWeight: 500, fontStyle: "italic", marginBottom: project.images || project.imageGroups ? "24px" : "0" }}>{project.note}</p>
+                  )}
+                  {project.imageGroups && (
+                    <div className="screenshot-showcase">
+                      {project.imageGroups.map((group, gi) => (
+                        <div key={"label" in group && group.label ? group.label : `group-${gi}`} className="screenshot-group">
+                          {"label" in group && group.label && <p className="screenshot-group-label">{group.label}</p>}
+                          <div className={`screenshot-grid screenshot-grid-${group.images.length}`}>
+                            {group.images.map((img) => (
+                              <figure key={img.src} className="screenshot-card">
+                                <div className="screenshot-frame">
+                                  <Image
+                                    src={img.src}
+                                    alt={img.alt}
+                                    width={img.width}
+                                    height={img.height}
+                                    unoptimized
+                                    style={{ width: "100%", height: "auto", display: "block" }}
+                                  />
+                                </div>
+                                {"caption" in img && img.caption && (
+                                  <figcaption className="screenshot-caption">{img.caption}</figcaption>
+                                )}
+                              </figure>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  {project.images && !project.imageGroups && (
+                    <div className="screenshot-showcase">
+                      <div className={`screenshot-grid screenshot-grid-${project.images.length}`}>
+                        {project.images.map((img) => (
+                          <figure key={img.src} className="screenshot-card">
+                            <div className="screenshot-frame">
+                              <Image
+                                src={img.src}
+                                alt={img.alt}
+                                width={"width" in img && typeof img.width === "number" ? img.width : 390}
+                                height={"height" in img && typeof img.height === "number" ? img.height : 844}
+                                unoptimized
+                                style={{ width: "100%", height: "auto", display: "block" }}
+                              />
+                            </div>
+                          </figure>
+                        ))}
+                      </div>
+                    </div>
                   )}
                 </div>
               </div>
@@ -212,14 +279,50 @@ export default function Home() {
       </footer>
 
       <style>{`
+        .screenshot-showcase { display: flex; flex-direction: column; gap: 28px; }
+        .screenshot-group-label {
+          font-size: 12px;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: var(--rose);
+          font-weight: 500;
+          margin: 0 0 12px;
+        }
+        .screenshot-grid {
+          display: grid;
+          gap: 16px;
+          align-items: start;
+        }
+        .screenshot-grid-1 { grid-template-columns: minmax(0, 200px); }
+        .screenshot-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        .screenshot-grid-5 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        .screenshot-card { margin: 0; }
+        .screenshot-frame {
+          border-radius: 8px;
+          overflow: hidden;
+          border: 1px solid rgba(240, 232, 236, 0.1);
+          background: rgba(240, 232, 236, 0.03);
+        }
+        .screenshot-caption {
+          margin: 8px 0 0;
+          font-size: 12px;
+          line-height: 1.4;
+          color: var(--dusk);
+          text-align: center;
+        }
         @media (max-width: 768px) {
           .desktop-nav { display: none !important; }
           .mobile-menu-btn { display: block !important; }
-          .hero { grid-template-columns: 1fr !important; gap: 40px !important; }
-          .hero-portrait { order: -1; max-width: 280px; margin: 0 auto; }
+          .hero { padding: 80px 24px 64px !important; }
           .two-col { grid-template-columns: 1fr !important; gap: 32px !important; }
           .three-col { grid-template-columns: 1fr !important; }
           .work-row { grid-template-columns: 1fr !important; gap: 16px !important; }
+          .screenshot-grid-1 { grid-template-columns: 1fr; max-width: 240px; }
+          .screenshot-grid-3 { grid-template-columns: 1fr; max-width: 240px; }
+          .screenshot-grid-5 { grid-template-columns: 1fr; max-width: 240px; }
+        }
+        @media (min-width: 769px) and (max-width: 1024px) {
+          .screenshot-grid-5 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         }
       `}</style>
     </div>
