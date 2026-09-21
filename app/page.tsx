@@ -50,58 +50,33 @@ export default function Home() {
 
       <main id="main">
 
-        {/* Hero */}
-        <section className="hero" style={{ maxWidth: "1100px", margin: "0 auto", padding: "96px 24px 80px" }}>
-          <div className="hero-content">
-            <p style={{ fontSize: "14px", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--rose)", marginBottom: "20px", fontWeight: 500 }}>Firework Development</p>
-            <h1 style={{ fontFamily: "var(--font-dm-serif)", fontSize: "clamp(42px, 6vw, 72px)", lineHeight: 1.1, letterSpacing: "-0.02em", marginBottom: "28px", maxWidth: "800px", color: "var(--petal)" }}>
-              Building software that works —{" "}<span style={{ color: "var(--rose)" }}>and feels human.</span>
-            </h1>
-            <p style={{ fontSize: "20px", lineHeight: 1.6, color: "var(--dusk)", maxWidth: "560px", marginBottom: "40px" }}>
-              I design and build software that solves real problems — partnering with startups and businesses from user flows through polished interfaces.
+        {/* Hero & About */}
+        <section id="about" className="hero" style={{ maxWidth: "1100px", margin: "0 auto", padding: "96px 24px 80px" }}>
+          <p style={{ fontSize: "14px", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--rose)", marginBottom: "20px", fontWeight: 500 }}>Firework Development</p>
+          <h1 style={{ fontFamily: "var(--font-dm-serif)", fontSize: "clamp(42px, 7vw, 84px)", lineHeight: 1.05, letterSpacing: "-0.02em", marginBottom: "16px", color: "var(--petal)" }}>
+            Kirsten Andersen Morris
+          </h1>
+          <p style={{ fontFamily: "var(--font-dm-serif)", fontSize: "clamp(22px, 3vw, 32px)", lineHeight: 1.2, color: "var(--rose)", marginBottom: "36px" }}>
+            UI/UX design and development
+          </p>
+          <div style={{ maxWidth: "620px" }}>
+            <p style={{ fontSize: "18px", lineHeight: 1.7, marginBottom: "16px", color: "var(--dusk)" }}>
+              I design and build web and mobile apps for startups and businesses — from user flows and wireframes to front-end code.
             </p>
-            <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
-              <a href="#contact" style={{ display: "inline-block", backgroundColor: "var(--rose)", color: "#fff", padding: "14px 28px", borderRadius: "6px", textDecoration: "none", fontSize: "15px", fontWeight: 500 }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "rgba(196, 96, 126, 0.85)")} onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "var(--rose)")}>
-                Let&apos;s build something together
-              </a>
-              <a href="#work" style={{ display: "inline-block", color: "var(--petal)", padding: "14px 28px", borderRadius: "6px", textDecoration: "none", fontSize: "15px", fontWeight: 500, border: "1px solid rgba(240, 232, 236, 0.1)" }}
-                onMouseEnter={(e) => (e.currentTarget.style.borderColor = "rgba(240, 232, 236, 0.25)")} onMouseLeave={(e) => (e.currentTarget.style.borderColor = "rgba(240, 232, 236, 0.1)")}>
-                See my work
-              </a>
-            </div>
+            <p style={{ fontSize: "18px", lineHeight: 1.7, marginBottom: "36px", color: "var(--dusk)" }}>
+              With a master&apos;s in technical communication, I build clarity and accessibility into every interface, informed by usability testing. I&apos;m easy to work with, ask good questions, and take feedback well.
+            </p>
           </div>
-        </section>
-
-        <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
-          <hr style={{ border: "none", borderTop: "1px solid rgba(240, 232, 236, 0.1)" }} />
-        </div>
-
-        {/* About */}
-        <section id="about" style={{ maxWidth: "1100px", margin: "0 auto", padding: "80px 24px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "64px", alignItems: "start" }} className="two-col">
-          <div>
-            <p style={{ fontSize: "13px", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--rose)", fontWeight: 500, marginBottom: "16px" }}>About</p>
-            <h2 style={{ fontFamily: "var(--font-dm-serif)", fontSize: "clamp(32px, 4vw, 48px)", lineHeight: 1.15, letterSpacing: "-0.02em", color: "var(--petal)" }}>
-              Kirsten Andersen Morris
-            </h2>
-          </div>
-          <div style={{ paddingTop: "8px" }}>
-            <p style={{ fontSize: "17px", lineHeight: 1.75, marginBottom: "20px", color: "var(--dusk)" }}>
-              I design and build digital products — from user flows and wireframing in Miro through front-end implementation in code. Through Firework Development, my independent software practice, I partner with startups and businesses on web and mobile apps that actually solve problems.
-            </p>
-            <p style={{ fontSize: "17px", lineHeight: 1.75, marginBottom: "20px", color: "var(--dusk)" }}>
-              On most projects I own the full experience; I&apos;ve also collaborated with dedicated designers and worked within established design systems. I hold a master&apos;s degree in technical communication and IAAP CPACC certification — clarity, usability, and accessibility are standards I build into every interface.
-            </p>
-            <p style={{ fontSize: "17px", lineHeight: 1.75, color: "var(--dusk)" }}>
-              I&apos;m scrappy, optimistic, and easy to work with. I ask good questions, take feedback well, and I&apos;m always learning. If you&apos;ve worked with developers who were hard to reach or hard to understand, I&apos;m told I&apos;m a different experience.
-            </p>
-            <div style={{ marginTop: "32px" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "24px 48px", marginBottom: "40px" }}>
+            <div>
               <p style={{ fontSize: "12px", letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--rose)", fontWeight: 500, marginBottom: "10px" }}>Design</p>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "20px" }}>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
                 {["Miro", "Figma", "User flows", "Wireframing", "Accessibility", "Responsive UI"].map((tag) => (
                   <span key={tag} style={{ fontSize: "13px", padding: "4px 12px", backgroundColor: "var(--deep)", borderRadius: "100px", color: "var(--dusk)", fontWeight: 500 }}>{tag}</span>
                 ))}
               </div>
+            </div>
+            <div>
               <p style={{ fontSize: "12px", letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--rose)", fontWeight: 500, marginBottom: "10px" }}>Development</p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
                 {["Next.js", "TypeScript", "React", "Python", "Django", "Supabase", "PostgreSQL", "Node.js", "AWS S3"].map((tag) => (
@@ -109,6 +84,16 @@ export default function Home() {
                 ))}
               </div>
             </div>
+          </div>
+          <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
+            <a href="#contact" style={{ display: "inline-block", backgroundColor: "var(--rose)", color: "#fff", padding: "14px 28px", borderRadius: "6px", textDecoration: "none", fontSize: "15px", fontWeight: 500 }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "rgba(196, 96, 126, 0.85)")} onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "var(--rose)")}>
+              Let&apos;s build something together
+            </a>
+            <a href="#work" style={{ display: "inline-block", color: "var(--petal)", padding: "14px 28px", borderRadius: "6px", textDecoration: "none", fontSize: "15px", fontWeight: 500, border: "1px solid rgba(240, 232, 236, 0.1)" }}
+              onMouseEnter={(e) => (e.currentTarget.style.borderColor = "rgba(240, 232, 236, 0.25)")} onMouseLeave={(e) => (e.currentTarget.style.borderColor = "rgba(240, 232, 236, 0.1)")}>
+              See my work
+            </a>
           </div>
         </section>
 
@@ -121,7 +106,7 @@ export default function Home() {
             </h2>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "32px" }} className="three-col">
               {[
-                { number: "01", title: "Product & UI Design", body: "User flows, wireframes, and interface design — from early discovery in Miro through polished, accessible UI. I refine designs in code, which lets me iterate quickly on real interactions and responsive behavior." },
+                { number: "01", title: "Product & UI Design", body: "User flows, wireframes, and interface design — from early discovery in Miro through usable, accessible interfaces. I refine designs in code, which lets me iterate quickly on real interactions and responsive behavior." },
                 { number: "02", title: "Web & Mobile Development", body: "Full-stack development for web and mobile apps — from greenfield builds to new features on existing products. I work in Next.js, Capacitor, Supabase, TypeScript, Python, and Django." },
                 { number: "03", title: "Startup Product Partnership", body: "Early-stage founder with an idea and no technical co-founder? I can be your first product partner — helping you scope, design, build, and ship your MVP without the overhead of an agency." },
               ].map((service) => (
@@ -138,7 +123,7 @@ export default function Home() {
         {/* Work */}
         <section id="work" style={{ maxWidth: "1100px", margin: "0 auto", padding: "80px 24px" }}>
           <p style={{ fontSize: "13px", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--rose)", fontWeight: 500, marginBottom: "16px" }}>Work</p>
-          <h2 style={{ fontFamily: "var(--font-dm-serif)", fontSize: "clamp(32px, 4vw, 48px)", lineHeight: 1.15, letterSpacing: "-0.02em", marginBottom: "56px", color: "var(--petal)" }}>Selected projects</h2>
+          <h2 style={{ fontFamily: "var(--font-dm-serif)", fontSize: "clamp(32px, 4vw, 48px)", lineHeight: 1.15, letterSpacing: "-0.02em", marginBottom: "56px", color: "var(--petal)" }}>Projects</h2>
           <div style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
             {[
               { client: "Bream", role: "UI/UX Design & Full-Stack Engineering", stack: ["Next.js", "Capacitor", "C#", "SQL", "Figma"], description: "Contractor on the engineering team at Bream, a private community platform where women 50+ find friendship through pods, affinity groups, and shared experiences. I've helped design and build across the Next.js/Capacitor client and C# API — including a more engaging member dashboard landing page (in collaboration with our PM), an incentive referral feature, a tagging system, and an updated profile page.", link: "https://www.hellobream.com/", imageGroups: [
