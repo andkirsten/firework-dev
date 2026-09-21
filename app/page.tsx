@@ -106,8 +106,8 @@ export default function Home() {
             </h2>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "32px" }} className="three-col">
               {[
-                { number: "01", title: "UX & Interface Design", body: "User flows, wireframes, and interface design — from early discovery in Miro through usable, accessible interfaces. I refine designs in code, which lets me iterate quickly on real interactions and responsive behavior." },
-                { number: "02", title: "Web & Mobile Development", body: "Full-stack development for web and mobile apps — from greenfield builds to new features on existing products. I work in Next.js, Capacitor, Supabase, TypeScript, Python, and Django." },
+                { number: "01", title: "Web & Mobile Development", body: "Full-stack development for web and mobile apps — from greenfield builds to new features on existing products. I work in Next.js, Capacitor, Supabase, TypeScript, Python, and Django." },
+                { number: "02", title: "UX & Interface Design", body: "User flows, wireframes, and interface design — from early discovery in Miro through usable, accessible interfaces. I refine designs in code, which lets me iterate quickly on real interactions and responsive behavior." },
                 { number: "03", title: "Startup MVP Design & Build", body: "Early-stage founder with an idea and no technical co-founder? I can help you scope, design, build, and ship your MVP without the overhead of an agency." },
               ].map((service) => (
                 <div key={service.number} style={{ backgroundColor: "var(--bg)", borderRadius: "12px", padding: "32px" }}>
