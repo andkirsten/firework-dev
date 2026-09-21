@@ -1,11 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --midnight: #1C1520;
-  --rose: #C4607E;
-  --petal: #F0E8EC;
-  --dusk: #8B7A8C;
-  --deep: #2C2230;
+  --bg: #FBFBF6;
+  --surface: #EAF0FA;
+  --ink: #0B1633;
+  --muted: #3C4560;
+  --accent: #0038A8;
+  --accent-hover: #002B85;
+  --accent-soft: #FBE38A;
+  --on-accent: #FFFFFF;
+  --border: rgba(11, 22, 51, 0.48);
+  --divider: rgba(11, 22, 51, 0.12);
   --font-dm-serif: 'DM Serif Display', Georgia, serif;
   --font-dm-sans: 'DM Sans', system-ui, sans-serif;
 }
@@ -14,8 +19,8 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background-color: var(--midnight);
-  color: var(--petal);
+  background-color: var(--bg);
+  color: var(--ink);
   font-family: var(--font-dm-sans);
   -webkit-font-smoothing: antialiased;
 }
@@ -31,7 +36,7 @@ h1, h2, h3 {
 }
 
 :focus-visible {
-  outline: 3px solid var(--rose);
+  outline: 3px solid var(--accent);
   outline-offset: 3px;
   border-radius: 2px;
 }

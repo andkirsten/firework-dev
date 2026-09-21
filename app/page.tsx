@@ -6,42 +6,42 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div style={{ backgroundColor: "var(--midnight)", color: "var(--petal)" }}>
+    <div style={{ backgroundColor: "var(--bg)", color: "var(--ink)" }}>
       <a
         href="#main"
         style={{ position: "absolute", left: "-9999px", top: "auto", width: "1px", height: "1px", overflow: "hidden" }}
-        onFocus={(e) => { Object.assign(e.currentTarget.style, { left: "16px", top: "16px", width: "auto", height: "auto", padding: "8px 16px", backgroundColor: "var(--rose)", color: "#fff", zIndex: "9999", borderRadius: "4px" }); }}
+        onFocus={(e) => { Object.assign(e.currentTarget.style, { left: "16px", top: "16px", width: "auto", height: "auto", padding: "8px 16px", backgroundColor: "var(--accent)", color: "var(--on-accent)", zIndex: "9999", borderRadius: "4px" }); }}
         onBlur={(e) => { Object.assign(e.currentTarget.style, { left: "-9999px", width: "1px", height: "1px" }); }}
       >
         Skip to main content
       </a>
 
-      <header style={{ position: "sticky", top: 0, backgroundColor: "var(--midnight)", borderBottom: "1px solid rgba(240, 232, 236, 0.1)", zIndex: 100 }}>
+      <header style={{ position: "sticky", top: 0, backgroundColor: "var(--bg)", borderBottom: "1px solid var(--divider)", zIndex: 100 }}>
         <nav style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px", height: "64px", display: "flex", alignItems: "center", justifyContent: "space-between" }} aria-label="Main navigation">
-          <a href="#" style={{ fontFamily: "var(--font-dm-serif)", fontSize: "20px", color: "var(--petal)", textDecoration: "none" }}>
-            Firework<span style={{ color: "var(--rose)" }}>.</span>
+          <a href="#" style={{ fontFamily: "var(--font-dm-serif)", fontSize: "20px", color: "var(--ink)", textDecoration: "none" }}>
+            Firework.
           </a>
           <ul style={{ display: "flex", gap: "36px", listStyle: "none", margin: 0, padding: 0 }} className="desktop-nav">
             {["About", "Services", "Work", "Contact"].map((item) => (
               <li key={item}>
-                <a href={`#${item.toLowerCase()}`} style={{ fontSize: "15px", color: "var(--dusk)", textDecoration: "none" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = "var(--rose)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = "var(--dusk)")}>{item}</a>
+                <a href={`#${item.toLowerCase()}`} style={{ fontSize: "15px", color: "var(--muted)", textDecoration: "none" }}
+                  onMouseEnter={(e) => { e.currentTarget.style.color = "var(--ink)"; e.currentTarget.style.textDecoration = "underline"; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.color = "var(--muted)"; e.currentTarget.style.textDecoration = "none"; }}>{item}</a>
               </li>
             ))}
           </ul>
           <button onClick={() => setMenuOpen(!menuOpen)} aria-expanded={menuOpen} aria-label="Toggle navigation menu"
-            style={{ display: "none", background: "none", border: "none", cursor: "pointer", padding: "8px", color: "var(--petal)" }} className="mobile-menu-btn">
+            style={{ display: "none", background: "none", border: "none", cursor: "pointer", padding: "8px", color: "var(--ink)" }} className="mobile-menu-btn">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
               {menuOpen ? <path d="M18 6L6 18M6 6l12 12" /> : <path d="M3 12h18M3 6h18M3 18h18" />}
             </svg>
           </button>
         </nav>
         {menuOpen && (
-          <div style={{ backgroundColor: "var(--midnight)", borderTop: "1px solid rgba(240, 232, 236, 0.1)", padding: "16px 24px 24px" }}>
+          <div style={{ backgroundColor: "var(--bg)", borderTop: "1px solid var(--divider)", padding: "16px 24px 24px" }}>
             <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: "16px" }}>
               {["About", "Services", "Work", "Contact"].map((item) => (
-                <li key={item}><a href={`#${item.toLowerCase()}`} onClick={() => setMenuOpen(false)} style={{ fontSize: "18px", color: "var(--petal)", textDecoration: "none" }}>{item}</a></li>
+                <li key={item}><a href={`#${item.toLowerCase()}`} onClick={() => setMenuOpen(false)} style={{ fontSize: "18px", color: "var(--ink)", textDecoration: "none" }}>{item}</a></li>
               ))}
             </ul>
           </div>
@@ -52,56 +52,56 @@ export default function Home() {
 
         {/* Hero & About */}
         <section id="about" className="hero" style={{ maxWidth: "1100px", margin: "0 auto", padding: "96px 24px 80px" }}>
-          <p style={{ fontSize: "14px", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--rose)", marginBottom: "20px", fontWeight: 500 }}>Firework Development</p>
-          <h1 style={{ fontFamily: "var(--font-dm-serif)", fontSize: "clamp(42px, 7vw, 84px)", lineHeight: 1.05, letterSpacing: "-0.02em", marginBottom: "16px", color: "var(--petal)" }}>
+          <p style={{ fontSize: "14px", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--accent)", marginBottom: "20px", fontWeight: 500 }}>Firework Development</p>
+          <h1 style={{ fontFamily: "var(--font-dm-serif)", fontSize: "clamp(42px, 7vw, 84px)", lineHeight: 1.05, letterSpacing: "-0.02em", marginBottom: "16px", color: "var(--ink)" }}>
             Kirsten Andersen Morris
           </h1>
-          <p style={{ fontFamily: "var(--font-dm-serif)", fontSize: "clamp(22px, 3vw, 32px)", lineHeight: 1.2, color: "var(--rose)", marginBottom: "36px" }}>
+          <p style={{ fontFamily: "var(--font-dm-serif)", fontSize: "clamp(22px, 3vw, 32px)", lineHeight: 1.2, color: "var(--accent)", marginBottom: "36px" }}>
             UI/UX design and development
           </p>
           <div style={{ maxWidth: "620px" }}>
-            <p style={{ fontSize: "18px", lineHeight: 1.7, marginBottom: "16px", color: "var(--dusk)" }}>
+            <p style={{ fontSize: "18px", lineHeight: 1.7, marginBottom: "16px", color: "var(--muted)" }}>
               I design and build web and mobile apps for startups and businesses — from user flows and wireframes to front-end code.
             </p>
-            <p style={{ fontSize: "18px", lineHeight: 1.7, marginBottom: "36px", color: "var(--dusk)" }}>
+            <p style={{ fontSize: "18px", lineHeight: 1.7, marginBottom: "36px", color: "var(--muted)" }}>
               With a master&apos;s in technical communication, I build clarity and accessibility into every interface, informed by usability testing. I&apos;m easy to work with, ask good questions, and take feedback well.
             </p>
           </div>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "24px 48px", marginBottom: "40px" }}>
             <div>
-              <p style={{ fontSize: "12px", letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--rose)", fontWeight: 500, marginBottom: "10px" }}>Design</p>
+              <p style={{ fontSize: "12px", letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--accent)", fontWeight: 500, marginBottom: "10px" }}>Design</p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
                 {["Miro", "Figma", "User flows", "Wireframing", "Accessibility", "Responsive UI"].map((tag) => (
-                  <span key={tag} style={{ fontSize: "13px", padding: "4px 12px", backgroundColor: "var(--deep)", borderRadius: "100px", color: "var(--dusk)", fontWeight: 500 }}>{tag}</span>
+                  <span key={tag} style={{ fontSize: "13px", padding: "4px 12px", backgroundColor: "var(--accent-soft)", borderRadius: "100px", color: "var(--ink)", fontWeight: 500 }}>{tag}</span>
                 ))}
               </div>
             </div>
             <div>
-              <p style={{ fontSize: "12px", letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--rose)", fontWeight: 500, marginBottom: "10px" }}>Development</p>
+              <p style={{ fontSize: "12px", letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--accent)", fontWeight: 500, marginBottom: "10px" }}>Development</p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
                 {["Next.js", "TypeScript", "React", "Python", "Django", "Supabase", "PostgreSQL", "Node.js", "AWS S3"].map((tag) => (
-                  <span key={tag} style={{ fontSize: "13px", padding: "4px 12px", backgroundColor: "var(--deep)", borderRadius: "100px", color: "var(--dusk)", fontWeight: 500 }}>{tag}</span>
+                  <span key={tag} style={{ fontSize: "13px", padding: "4px 12px", backgroundColor: "var(--accent-soft)", borderRadius: "100px", color: "var(--ink)", fontWeight: 500 }}>{tag}</span>
                 ))}
               </div>
             </div>
           </div>
           <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
-            <a href="#contact" style={{ display: "inline-block", backgroundColor: "var(--rose)", color: "#fff", padding: "14px 28px", borderRadius: "6px", textDecoration: "none", fontSize: "15px", fontWeight: 500 }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "rgba(196, 96, 126, 0.85)")} onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "var(--rose)")}>
+            <a href="#contact" style={{ display: "inline-block", backgroundColor: "var(--accent)", color: "var(--on-accent)", padding: "14px 28px", borderRadius: "6px", textDecoration: "none", fontSize: "15px", fontWeight: 500 }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "var(--accent-hover)")} onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "var(--accent)")}>
               Let&apos;s build something together
             </a>
-            <a href="#work" style={{ display: "inline-block", color: "var(--petal)", padding: "14px 28px", borderRadius: "6px", textDecoration: "none", fontSize: "15px", fontWeight: 500, border: "1px solid rgba(240, 232, 236, 0.1)" }}
-              onMouseEnter={(e) => (e.currentTarget.style.borderColor = "rgba(240, 232, 236, 0.25)")} onMouseLeave={(e) => (e.currentTarget.style.borderColor = "rgba(240, 232, 236, 0.1)")}>
+            <a href="#work" style={{ display: "inline-block", color: "var(--ink)", padding: "14px 28px", borderRadius: "6px", textDecoration: "none", fontSize: "15px", fontWeight: 500, border: "1px solid var(--border)" }}
+              onMouseEnter={(e) => (e.currentTarget.style.borderColor = "var(--ink)")} onMouseLeave={(e) => (e.currentTarget.style.borderColor = "var(--border)")}>
               See my work
             </a>
           </div>
         </section>
 
         {/* Services */}
-        <section id="services" style={{ backgroundColor: "var(--deep)", padding: "80px 24px" }}>
+        <section id="services" style={{ backgroundColor: "var(--surface)", padding: "80px 24px" }}>
           <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
-            <p style={{ fontSize: "13px", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--rose)", fontWeight: 500, marginBottom: "16px" }}>Services</p>
-            <h2 style={{ fontFamily: "var(--font-dm-serif)", fontSize: "clamp(32px, 4vw, 48px)", lineHeight: 1.15, letterSpacing: "-0.02em", marginBottom: "56px", maxWidth: "480px", color: "var(--petal)" }}>
+            <p style={{ fontSize: "13px", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--accent)", fontWeight: 500, marginBottom: "16px" }}>Services</p>
+            <h2 style={{ fontFamily: "var(--font-dm-serif)", fontSize: "clamp(32px, 4vw, 48px)", lineHeight: 1.15, letterSpacing: "-0.02em", marginBottom: "56px", maxWidth: "480px", color: "var(--ink)" }}>
               What I can build with you
             </h2>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "32px" }} className="three-col">
@@ -110,10 +110,10 @@ export default function Home() {
                 { number: "02", title: "Web & Mobile Development", body: "Full-stack development for web and mobile apps — from greenfield builds to new features on existing products. I work in Next.js, Capacitor, Supabase, TypeScript, Python, and Django." },
                 { number: "03", title: "Startup MVP Design & Build", body: "Early-stage founder with an idea and no technical co-founder? I can help you scope, design, build, and ship your MVP without the overhead of an agency." },
               ].map((service) => (
-                <div key={service.number} style={{ backgroundColor: "var(--midnight)", borderRadius: "12px", padding: "32px" }}>
-                  <p style={{ fontSize: "13px", color: "var(--rose)", fontWeight: 500, marginBottom: "16px" }}>{service.number}</p>
-                  <h3 style={{ fontFamily: "var(--font-dm-serif)", fontSize: "22px", lineHeight: 1.3, marginBottom: "16px", color: "var(--petal)" }}>{service.title}</h3>
-                  <p style={{ fontSize: "15px", lineHeight: 1.7, color: "var(--dusk)" }}>{service.body}</p>
+                <div key={service.number} style={{ backgroundColor: "var(--bg)", borderRadius: "12px", padding: "32px" }}>
+                  <p style={{ marginBottom: "16px" }}><span style={{ display: "inline-block", fontSize: "13px", color: "var(--on-accent)", backgroundColor: "var(--accent)", fontWeight: 500, padding: "2px 12px", borderRadius: "100px" }}>{service.number}</span></p>
+                  <h3 style={{ fontFamily: "var(--font-dm-serif)", fontSize: "22px", lineHeight: 1.3, marginBottom: "16px", color: "var(--ink)" }}>{service.title}</h3>
+                  <p style={{ fontSize: "15px", lineHeight: 1.7, color: "var(--muted)" }}>{service.body}</p>
                 </div>
               ))}
             </div>
@@ -122,8 +122,8 @@ export default function Home() {
 
         {/* Work */}
         <section id="work" style={{ maxWidth: "1100px", margin: "0 auto", padding: "80px 24px" }}>
-          <p style={{ fontSize: "13px", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--rose)", fontWeight: 500, marginBottom: "16px" }}>Work</p>
-          <h2 style={{ fontFamily: "var(--font-dm-serif)", fontSize: "clamp(32px, 4vw, 48px)", lineHeight: 1.15, letterSpacing: "-0.02em", marginBottom: "56px", color: "var(--petal)" }}>Projects</h2>
+          <p style={{ fontSize: "13px", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--accent)", fontWeight: 500, marginBottom: "16px" }}>Work</p>
+          <h2 style={{ fontFamily: "var(--font-dm-serif)", fontSize: "clamp(32px, 4vw, 48px)", lineHeight: 1.15, letterSpacing: "-0.02em", marginBottom: "56px", color: "var(--ink)" }}>Projects</h2>
           <div style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
             {[
               { client: "Bream", role: "UI/UX Design & Full-Stack Engineering", stack: ["Next.js", "Capacitor", "C#", "SQL", "Figma"], description: "Contractor on the engineering team at Bream, a private community platform where women 50+ find friendship through pods, affinity groups, and shared experiences. I've helped design and build across the Next.js/Capacitor client and C# API — including a more engaging member dashboard landing page (in collaboration with our PM), an incentive referral feature, a tagging system, and an updated profile page.", link: "https://www.hellobream.com/", imageGroups: [
@@ -153,27 +153,27 @@ export default function Home() {
                 ] },
               ] },
             ].map((project, i) => (
-              <div key={i} style={{ padding: "32px 0", borderTop: "1px solid rgba(240, 232, 236, 0.1)", display: "grid", gridTemplateColumns: "1fr 2fr", gap: "48px", alignItems: "start" }} className="work-row">
+              <div key={i} style={{ padding: "32px 0", borderTop: "1px solid var(--divider)", display: "grid", gridTemplateColumns: "1fr 2fr", gap: "48px", alignItems: "start" }} className="work-row">
                 <div>
-                  <h3 style={{ fontFamily: "var(--font-dm-serif)", fontSize: "24px", marginBottom: "4px", color: "var(--petal)" }}>{project.client}</h3>
-                  <p style={{ fontSize: "14px", color: "var(--rose)", fontWeight: 500, marginBottom: "16px" }}>{project.role}</p>
+                  <h3 style={{ fontFamily: "var(--font-dm-serif)", fontSize: "24px", marginBottom: "4px", color: "var(--ink)" }}>{project.client}</h3>
+                  <p style={{ fontSize: "14px", color: "var(--accent)", fontWeight: 500, marginBottom: "16px" }}>{project.role}</p>
                   <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
                     {project.stack.map((tag) => (
-                      <span key={tag} style={{ fontSize: "12px", padding: "3px 10px", backgroundColor: "var(--deep)", borderRadius: "100px", color: "var(--dusk)" }}>{tag}</span>
+                      <span key={tag} style={{ fontSize: "12px", padding: "3px 10px", backgroundColor: "var(--accent-soft)", borderRadius: "100px", color: "var(--ink)" }}>{tag}</span>
                     ))}
                   </div>
                 </div>
                 <div>
-                  <p style={{ fontSize: "16px", lineHeight: 1.75, color: "var(--dusk)", marginBottom: project.link || project.note || project.images || project.imageGroups ? "16px" : "0" }}>{project.description}</p>
+                  <p style={{ fontSize: "16px", lineHeight: 1.75, color: "var(--muted)", marginBottom: project.link || project.note || project.images || project.imageGroups ? "16px" : "0" }}>{project.description}</p>
                   {project.link && (
                     <a href={project.link} target="_blank" rel="noopener noreferrer"
-                      style={{ fontSize: "14px", color: "var(--rose)", fontWeight: 500, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "6px", marginBottom: project.images || project.imageGroups ? "24px" : "0" }}>
+                      style={{ fontSize: "14px", color: "var(--ink)", fontWeight: 500, textDecoration: "underline", textDecorationColor: "var(--accent)", textDecorationThickness: "3px", textUnderlineOffset: "4px", display: "inline-flex", alignItems: "center", gap: "6px", marginBottom: project.images || project.imageGroups ? "24px" : "0" }}>
                       View project
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10" /></svg>
                     </a>
                   )}
                   {!project.link && project.note && (
-                    <p style={{ fontSize: "14px", color: "var(--dusk)", fontWeight: 500, fontStyle: "italic", marginBottom: project.images || project.imageGroups ? "24px" : "0" }}>{project.note}</p>
+                    <p style={{ fontSize: "14px", color: "var(--muted)", fontWeight: 500, fontStyle: "italic", marginBottom: project.images || project.imageGroups ? "24px" : "0" }}>{project.note}</p>
                   )}
                   {project.imageGroups && (
                     <div className="screenshot-showcase">
@@ -226,40 +226,40 @@ export default function Home() {
                 </div>
               </div>
             ))}
-            <div style={{ borderTop: "1px solid rgba(240, 232, 236, 0.1)" }} />
+            <div style={{ borderTop: "1px solid var(--divider)" }} />
           </div>
         </section>
 
         {/* Contact */}
-        <section id="contact" style={{ backgroundColor: "var(--deep)", padding: "80px 24px" }}>
+        <section id="contact" style={{ backgroundColor: "var(--surface)", padding: "80px 24px" }}>
           <div style={{ maxWidth: "1100px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "64px", alignItems: "center" }} className="two-col">
             <div>
-              <p style={{ fontSize: "13px", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--rose)", fontWeight: 500, marginBottom: "16px" }}>Contact</p>
-              <h2 style={{ fontFamily: "var(--font-dm-serif)", fontSize: "clamp(32px, 4vw, 48px)", lineHeight: 1.15, letterSpacing: "-0.02em", color: "var(--petal)", marginBottom: "24px" }}>
+              <p style={{ fontSize: "13px", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--accent)", fontWeight: 500, marginBottom: "16px" }}>Contact</p>
+              <h2 style={{ fontFamily: "var(--font-dm-serif)", fontSize: "clamp(32px, 4vw, 48px)", lineHeight: 1.15, letterSpacing: "-0.02em", color: "var(--ink)", marginBottom: "24px" }}>
                 Let&apos;s build something together
               </h2>
-              <p style={{ fontSize: "17px", lineHeight: 1.7, color: "var(--dusk)" }}>
+              <p style={{ fontSize: "17px", lineHeight: 1.7, color: "var(--muted)" }}>
                 I&apos;m currently taking on new clients. If you have a project in mind — or just want to talk through an idea — I&apos;d love to hear from you.
               </p>
             </div>
             <div>
               <a href="mailto:kirsten@fireworkdev.com"
-                style={{ display: "inline-block", backgroundColor: "var(--rose)", color: "#fff", padding: "16px 32px", borderRadius: "6px", textDecoration: "none", fontSize: "16px", fontWeight: 500, marginBottom: "20px" }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "rgba(196, 96, 126, 0.85)")}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "var(--rose)")}>
+                style={{ display: "inline-block", backgroundColor: "var(--accent)", color: "var(--on-accent)", padding: "16px 32px", borderRadius: "6px", textDecoration: "none", fontSize: "16px", fontWeight: 500, marginBottom: "20px" }}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "var(--accent-hover)")}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "var(--accent)")}>
                 kirsten@fireworkdev.com
               </a>
-              <p style={{ fontSize: "14px", color: "var(--dusk)" }}>Based in Iowa — working with clients everywhere.</p>
+              <p style={{ fontSize: "14px", color: "var(--muted)" }}>Based in Iowa — working with clients everywhere.</p>
             </div>
           </div>
         </section>
 
       </main>
 
-      <footer style={{ backgroundColor: "var(--deep)", borderTop: "1px solid rgba(240, 232, 236, 0.1)", padding: "24px" }}>
+      <footer style={{ backgroundColor: "var(--surface)", borderTop: "1px solid var(--divider)", padding: "24px" }}>
         <div style={{ maxWidth: "1100px", margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "12px" }}>
-          <p style={{ fontSize: "14px", color: "var(--dusk)" }}>© {new Date().getFullYear()} Firework Development, LLC</p>
-          <p style={{ fontSize: "14px", color: "var(--dusk)" }}>Kirsten Andersen Morris</p>
+          <p style={{ fontSize: "14px", color: "var(--muted)" }}>© {new Date().getFullYear()} Firework Development, LLC</p>
+          <p style={{ fontSize: "14px", color: "var(--muted)" }}>Kirsten Andersen Morris</p>
         </div>
       </footer>
 
@@ -269,7 +269,7 @@ export default function Home() {
           font-size: 12px;
           letter-spacing: 0.08em;
           text-transform: uppercase;
-          color: var(--rose);
+          color: var(--accent);
           font-weight: 500;
           margin: 0 0 12px;
         }
@@ -285,14 +285,14 @@ export default function Home() {
         .screenshot-frame {
           border-radius: 8px;
           overflow: hidden;
-          border: 1px solid rgba(240, 232, 236, 0.1);
-          background: rgba(240, 232, 236, 0.03);
+          border: 1px solid var(--divider);
+          background: var(--surface);
         }
         .screenshot-caption {
           margin: 8px 0 0;
           font-size: 12px;
           line-height: 1.4;
-          color: var(--dusk);
+          color: var(--muted);
           text-align: center;
         }
         @media (max-width: 768px) {
