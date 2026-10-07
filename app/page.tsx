@@ -603,8 +603,7 @@ export default function Home() {
                 marginBottom: "36px",
               }}
             >
-              Product Engineer — building software that&apos;s easy to learn and
-              use.
+              Product Engineer | Software Engineer
             </p>
             <div style={{ maxWidth: "620px" }}>
               <p
@@ -616,10 +615,18 @@ export default function Home() {
                 }}
               >
                 With a background in instructional design and technical
-                communication,{" "}
-                <strong>
-                  I translate complex ideas into user-friendly products.
-                </strong>
+                communication.
+              </p>
+              <p
+                style={{
+                  fontFamily: "var(--font-dm-serif)",
+                  fontSize: "clamp(22px, 2.6vw, 28px)",
+                  lineHeight: 1.3,
+                  marginBottom: "16px",
+                  color: "var(--ink)",
+                }}
+              >
+                I translate complex ideas into user-friendly products.
               </p>
               <p
                 style={{
