@@ -617,7 +617,8 @@ export default function Home() {
                 With a background in instructional design and technical
                 communication,{" "}
                 <strong style={{ color: "var(--accent)" }}>
-                  I translate complex ideas into user-friendly products.
+                  <span style={{ whiteSpace: "nowrap" }}>I translate</span>{" "}
+                  complex ideas into user-friendly products.
                 </strong>
               </p>
               <p
